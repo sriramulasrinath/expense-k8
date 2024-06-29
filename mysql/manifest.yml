@@ -20,10 +20,10 @@ spec:
         component: mysql 
         project: expense 
         tier: db
-      spec:
-        containers:
-        - name: mysql
-          image: joindevops/mysql:v1.0
+    spec:
+      containers:
+      - name: mysql
+        image: joindevops/mysql:v1.0
 
 ---
 apiVersion: v1 
