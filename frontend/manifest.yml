@@ -99,20 +99,20 @@ metadata:
   labels: 
     component: frontend 
     project: expense 
-    tier: db
+    tier: web
 spec:
   replicas: 2 
   selector:
     matchLabels:
       component: frontend 
       project: expense 
-      tier: db
+      tier: web
   template:
     metadata:
       labels: 
         component: frontend 
         project: expense 
-        tier: db
+        tier: web
     spec:
       containers:
       - name: frontend
@@ -141,7 +141,7 @@ spec:
   selector:
     component: frontend 
     project: expense 
-    tier: db
+    tier: web
   ports:
   - protocol: TCP
     port: 8080 #service-port
