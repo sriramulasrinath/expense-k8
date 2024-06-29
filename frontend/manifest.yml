@@ -99,20 +99,20 @@ metadata:
   labels: 
     component: frontend 
     project: expense 
-    tier: web
+    tier: db
 spec:
   replicas: 2 
   selector:
     matchLabels:
       component: frontend 
       project: expense 
-      tier: web
+      tier: db
   template:
     metadata:
       labels: 
         component: frontend 
         project: expense 
-        tier: web
+        tier: db
     spec:
       containers:
       - name: frontend
@@ -129,7 +129,6 @@ spec:
           items:
             - key: nginx.conf
               path: nginx.conf
-              
 ---
 apiVersion: v1 
 kind: Service 
@@ -141,7 +140,7 @@ spec:
   selector:
     component: frontend 
     project: expense 
-    tier: web
+    tier: db
   ports:
   - protocol: TCP
     port: 8080 #service-port
