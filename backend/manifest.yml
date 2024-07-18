@@ -4,7 +4,9 @@ metadata:
   name: backend
   namespace: expense
 data:
-  DB_Host: mysql #mysql component service name
+  DB_Host: db-dev.srinath.online
+  #DB_Host: mysql #mysql component service name
+  
 ---
 apiVersion: apps/v1
 kind: Deployment 
