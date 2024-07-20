@@ -4,7 +4,7 @@ metadata:
   name: backend
   namespace: expense
 data:
-  DB_Host: db-dev.srinath.online
+  DB_HOST: db-dev.srinath.online
   #DB_Host: mysql #mysql component service name
   
 ---
@@ -16,20 +16,21 @@ metadata:
   labels: 
     component: backend 
     project: expense 
-    tier: db
+    tier: app
 spec:
   replicas: 2 
   selector:
     matchLabels:
       component: backend 
       project: expense 
-      tier: db
+      tier: app
+  # pod definition
   template:
     metadata:
       labels: 
         component: backend 
         project: expense 
-        tier: db
+        tier: app
     spec:
       initContainers:
       - name: init-myservice
@@ -72,7 +73,7 @@ spec:
   selector:
     component: backend 
     project: expense 
-    tier: db
+    tier: app
   ports:
   - protocol: TCP
     port: 8080 #service-port
